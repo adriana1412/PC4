@@ -44,9 +44,8 @@ pagina_seleccionada = st.sidebar.selectbox('Selecciona una página', paginas)
 if pagina_seleccionada == 'Inicio':
 
     # La función st.markdown permite centrar y agrandar la letra del título de la web en Streamlit.
-    st.markdown("<h1 style='text-align: center;'>Aquí escribe un nombre creativo para tu blog</h1>", unsafe_allow_html=True)
-
-    # <h1 style='text-align: center;'>Nombre de tu blog</h1>: Esto es una cadena de código HTML. 
+    st.markdown("<h1 style='text-align: center; color: pink'>Adriblog🎀</h1>", unsafe_allow_html=True)
+    # <h1 style='text-align: center;'>Adriblog</h1>: Esto es una cadena de código HTML. 
     # La etiqueta <h1> se utiliza para el encabezado principal de una página web, y 
     # el atributo style se utiliza para agregar estilos CSS. 
     # En este caso, el texto está alineado al centro (text-align: center;). 
@@ -68,7 +67,7 @@ if pagina_seleccionada == 'Inicio':
     # Las columnas creadas se asignan a las variables col1 y col2.
 
     # En la primera columna colocamos la imagen de perfil
-    col1.image("ellie.png", caption='Aquí puedes escribir una etiqueta debajo de la imagen', width=300)
+    col1.image("foto_perfil.jpg", caption='Aquí puedes escribir una etiqueta debajo de la imagen', width=300)
 
     # col1.image("ellie.png", caption='Ellie', width=300): Esta línea está colocando una imagen en la primera columna (col1). 
     # La función image toma como primer argumento el nombre del archivo de la imagen que se desea mostrar. 
@@ -82,13 +81,10 @@ if pagina_seleccionada == 'Inicio':
     # ¿Qué te gustaría hacer en el futuro?, ¿Qué te gusta hacer en tu tiempo libre?
 
     texto = """
-    Aquí escribe una presentación creativa sobre ti.
-    ¿Quién eres?, 
-    ¿De dónde eres?, 
-    ¿Qué estudias?, 
-    ¿Qué te gusta de tu carrera?, 
-    ¿Qué te gustaría hacer en el futuro?, 
-    ¿Qué te gusta hacer en tu tiempo libre?
+    ¡Hola mundooo! Soy Adriana Julca, tengo 19 años.
+    Actualmente estudio la carrera de Publicidad en la Pontificia Universidad Católica del Perú.
+    En parte escogí mi carrera. porque desde chiquita mi papá siempre me mostraba publicidades.
+    Pero fuera de lo académico, me gusta maquillarme, leer libros de fantasía y volver a ver las mismas series y películas de mi infancia.
     """
 
     # Las comillas triples (""") en Python se utilizan para definir cadenas multilínea.
