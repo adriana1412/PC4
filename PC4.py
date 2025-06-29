@@ -67,7 +67,8 @@ if pagina_seleccionada == 'Inicio':
     # Las columnas creadas se asignan a las variables col1 y col2.
 
     # En la primera columna colocamos la imagen de perfil
-    col1.image("foto_perfil.jpg", caption='Aquí puedes escribir una etiqueta debajo de la imagen', width=300)
+    from PIL import Image
+    col1.image(Image.open("foto_perfil.jpg").rotate(270, expand=True), caption='Esta soy yooo', width=300)
 
     # col1.image("ellie.png", caption='Ellie', width=300): Esta línea está colocando una imagen en la primera columna (col1). 
     # La función image toma como primer argumento el nombre del archivo de la imagen que se desea mostrar. 
@@ -83,8 +84,9 @@ if pagina_seleccionada == 'Inicio':
     texto = """
     ¡Hola mundooo! Soy Adriana Julca, tengo 19 años.
     Actualmente estudio la carrera de Publicidad en la Pontificia Universidad Católica del Perú.
-    En parte escogí mi carrera. porque desde chiquita mi papá siempre me mostraba publicidades.
-    Pero fuera de lo académico, me gusta maquillarme, leer libros de fantasía y volver a ver las mismas series y películas de mi infancia.
+    En parte escogí mi carrera porque desde chiquita mi papá siempre me mostraba publicidades y eso hizo que a mi también me gustara, y pues eso hizo que me empezara a gustar la carrera en un inicio.
+    En parte, también la escogí porque, la verdad, no me interesaba ninguna otra carrera y esta se veía interesante. 
+    Pero fuera de lo académico, me gusta maquillarme, leer libros de fantasía y volver a ver siempre las mismas series y películas de mi infancia.
     """
 
     # Las comillas triples (""") en Python se utilizan para definir cadenas multilínea.
@@ -113,11 +115,11 @@ elif  pagina_seleccionada == 'Experiencia':
 
     # Agregar un  texto para la respuesta
     texto_2 = """
-    Aquí escribe tu experiencia aprendiendo a programar. 
-    ¿Cómo te sentiste al principio?, 
-    ¿Qué te ha enseñado la programación?, 
-    ¿Qué te gusta de programar?, 
-    ¿Qué te gustaría hacer con la programación en el futuro? 
+    Ha sido una experiencia interesante, ya que nunca pensé que alguna vez tendría
+    que utilizar programas como Google Colab o Visual Studio Code. También se
+    podría decir que ha sido satisfactorio lograr aprender a hacer jueguitos como el de 
+    piedra, papel o tijera en las primeras semanas del curso, y aprender a hacer 
+    gráficos a partir de bases de datos. 
     """
 
     # Mostramos el texto
@@ -133,7 +135,7 @@ elif  pagina_seleccionada == 'Experiencia':
     # En este caso, {texto_2} se reemplaza por el valor de la variable texto.
 
     # Agregamos un subtítulo para el video
-    st.markdown("<h2 style='text-align: center;'>Aquí escribe un nombre creativo para presentar tu video</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center;'>Video sobre los bucles for y while realizados para mi PC2</h2>", unsafe_allow_html=True)
     
     # <h2 style='text-align: center;'>Aquí escribe un nombre creativo para presentar tu video</h2>: Esta es una cadena de código HTML.
     # La etiqueta <h2> se utiliza para un encabezado de segundo nivel en una página web.
@@ -146,7 +148,7 @@ elif  pagina_seleccionada == 'Experiencia':
     # Por ejemplo, puedes agregar un emoji de video 🎥 
 
     # Agregamos un video realizado en las practicas anteriores
-    st.video("https://www.youtube.com/watch?v=X_Z7d04x9-E")
+    # st.video("https://www.youtube.com/watch?v=X_Z7d04x9-E")
 
     # st.video("https://www.youtube.com/watch?v=X_Z7d04x9-E"): Esta línea está mostrando un video en la aplicación web.
     # La función video toma como primer argumento la URL del video que se desea mostrar.
@@ -154,7 +156,7 @@ elif  pagina_seleccionada == 'Experiencia':
     # Puedes cambiar la URL por la de tu video en YouTube o en otra plataforma de video.
 
     # O creamos un botón para ir al enlace del video con button
-    st.markdown(f"<div style='text-align: center;'><a href='https://drive.google.com/file/d/1REvRXSu3GuGD73w8j44135MkRiezd0gP/view?usp=drive_link' target='_blank'><button>Ver video</button></a></div>", unsafe_allow_html=True) 
+    st.markdown(f"<div style='text-align: center;'><a href='https://drive.google.com/file/d/10oNXuFyhJFCs8IpJneRbV537lcMwd_ei/view?usp=sharing' target='_blank'><button>Ver video🎥</button></a></div>", unsafe_allow_html=True) 
 
     # <div style='text-align: center;'><a href='https://drive.google.com/file/d/1REvRXSu3GuGD73w8j44135MkRiezd0gP/view?usp=drive_link' target='_blank'><button>Ver video</button></a></div>:
     # Esta es una cadena de código HTML.
@@ -174,10 +176,10 @@ elif  pagina_seleccionada == 'Experiencia':
 else:
 
     # Agregamos un título para la página de gráficos
-    st.markdown("<h1 style='text-align: center;'>Aquí escribe un nombre creativo para presentar tus gráficos</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>Mis gráficos favoritos en el curso</h1>", unsafe_allow_html=True)
 
     # Creamos una lista de gráficos
-    graficos = ['Gráfico de barras verticales de lenguas aisladas', 'Gráfico de barras horizontales de familias lingüísticas', 'mapa_cusco']
+    graficos = ['Piechart de Kiwi', 'Wordcloud', 'Mapa top películas']
 
     # Creamos un cuadro de selección en la página de gráficos
     grafico_seleccionado = st.selectbox('Selecciona un gráfico', graficos)
@@ -191,19 +193,19 @@ else:
     
 
     # Mostramos el gráfico seleccionado
-    if grafico_seleccionado == 'Gráfico de barras verticales de lenguas aisladas':
-        st.markdown("<div style='text-align: justify; font-size: 20px;'>Aquí debe ir una breve interpretación de tu gráfico</div>", unsafe_allow_html=True)
-        st.image("aisladas_base_datos.png", caption='Gráfico de lenguas aisladas', width=500)
+    if grafico_seleccionado == 'Piechart de Kiwi':
+        st.markdown("<div style='text-align: justify; font-size: 20px;'>El gráfico muestra cuales fueron los últimos videos más populares del tik toker Kiwi de acuerdo a su hashtag.</div>", unsafe_allow_html=True)
+        st.image("piechart_kiwi.png", caption='Piechart de Kiwi', width=500)
         pass
-    elif grafico_seleccionado == 'Gráfico de barras horizontales de familias lingüísticas':
-        st.markdown("<div style='text-align: justify; font-size: 20px;'>Aquí debe ir una breve interpretación de tu gráfico</div>", unsafe_allow_html=True)
-        st.image("lengua_familia_GB.png", caption='Gráfico de familias lingüísticas', width=500)
+    elif grafico_seleccionado == 'Wordcloud':
+        st.markdown("<div style='text-align: justify; font-size: 20px;'>Es una nube de palabras con las palabras más repetidas de los textos “pregunta 4a” y “pregunta 4b” utilizados en la PC2.</div>", unsafe_allow_html=True)
+        st.image("wordcloud_pc2.png", caption='Wordcloud de la PC2', width=500)
         pass
-    elif grafico_seleccionado == 'mapa_cusco':
-        st.markdown("<div style='text-align: justify; font-size: 20px;'>Aquí debe ir una breve interpretación de tu mapa</div>", unsafe_allow_html=True)
-        # Si "mapa_cusco.html" es un archivo HTML (no una imagen), debes mostrarlo con st.components.v1.html
+    elif grafico_seleccionado == 'Mapa top películas':
+        st.markdown("<div style='text-align: justify; font-size: 20px;'>Es un mapa interactivo sobre mi top 5 películas favoritas, indicando donde fueron grabadas, su nombre, quien fue el director y el año en que se estrenó.</div>", unsafe_allow_html=True)
+        # Si "mapa_peliculas.html" es un archivo HTML (no una imagen), debes mostrarlo con st.components.v1.html
         import streamlit.components.v1 as components
-        with open("mapa_cusco.html", "r", encoding="utf-8") as f:
+        with open("mapa_peliculas.html", "r", encoding="utf-8") as f:
             html_content = f.read()
         components.html(html_content, height=500)
         pass
